@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script> 
+$('input[type="checkbox"]').on('change', function() {
+    $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+});
+</script>
+<script>
+function calc(){
+var c1 = 0;
+var c2 = 0;
+var selected = document.getElementsByClassName("check c1");
+      
+      for (var i = 0; i < selected.length; ++i) { 
+      if(selected[i].checked == true){
+         c1 += parseInt(selected[i].value);
+
+      }
+      }
+      
+      var selected2 = document.getElementsByClassName("check c2");
+      
+      for (var i = 0; i < selected2.length; ++i) { 
+      if(selected2[i].checked == true){
+         c2 += parseInt(selected2[i].value);
+
+      }
+      }
+
+document.getElementById("score1").innerHTML = c1;
+document.getElementById("score2").innerHTML = c2;
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '/' + dd + '/' + yyyy;
+document.getElementById("date").innerHTML = today;
+
+
+}
+</script>
+<style>
+p {
+  display: inline;
+}
+
+.lBlock{
+  float: left;
+}
+
+.rBlock{
+  float: right;
+}
+
+table, td {
+   border: 1px solid black;
+   padding: 5px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Risk Tolerance Assessment Form</h1>
+
+<form action = "">
+<div class="lBlock">
+<p>Risk Tolerance prepared for:</p>
+</div>
+<div class="rBlock">
+<label for="advisor">Advisor:</label>
+<input type="text" id="advisor" name="advisor">
+</div><br>
+<div class="lBlock"><br>
+<label for="client1">Client 1:</label>
+<input type="text" id="client1" name="client1">
+</div>
+<div class="rBlock"><br>
+<label for="Client 2">Client 2:</label>
+<input type="text" id="client2" name="client2">
+</div>
+<br><br><br><p>(To calculate your risk, please select <strong>ONE</strong> answer from each of the following questions. Please fill out Client 1's response on the left circle and Client 2 under the right circle for each choice.)</p>
+<input type="checkbox" id="c1" name="c1" value="0">
+<label for="c1">1 | </label>
+<input type="checkbox" id="c2" name="c2" value="0">
+<label for="c2">2</label>
+<br><br><br>
+<p>
+1. Which of the following best descripbes your primary investment objective?
+</p><br><br>
+<table>
+<td style=text-align:center>
+  <p>
+  <strong>Wealth Acumulation</strong><br>
+  (Emphasis on continued captial appreciation in accordance with our overall risk tolerance.)
+  </p><br>
+  <input class="c1 check" type="checkbox" id="WA1" name="obj1" value="12">
+<label for="WA1"> | </label>
+<input class="c2 check" type="checkbox" id="WA2" name="obj2" value="12">
+<label for="WA2"></label>
+<br><p>
+(12)
+</p>
+</td>
+<td style=text-align:center>
+  <p>
+  <strong>Wealth Maintenance</strong><br>
+  (Emphasis on maintaining a desired lifestyle or level of financial security.)
+  </p><br>
+  <input class="c1 check" type="checkbox" id="WM1" name="obj1" value="6">
+<label  for="WM1"> | </label>
+<input class="c2 check" type="checkbox" id="WM2" name="obj2" value="6">
+<label for="WM2"></label>
+<br><p>
+(6)
+</p>
+</td>
+<td style=text-align:center>
+  <p>
+  <strong>Wealth Distribution</strong><br>
+  (Emphasis on using wealth for living expenses.)
+  </p><br>
+  <input class="c1 check" type="checkbox" id="WD1" name="obj1" value="1">
+<label for="WD1"> | </label>
+<input class="c2 check" type="checkbox" id="WD2" name="obj2" value="1">
+<label for="WD2"></label>
+<br><p>
+(1)
+</p>
+</td>
+</table><br><br>
+
+<p>
+2. Approximately how many years do you expect to continue to invest your assets in he stock market?
+</p><br><br>
+<table>
+<td style=text-align:center>
+  <p>
+  <strong>0-3 Years</strong><br>
+  <br>
+  </p>
+  <input class="c1 check" type="checkbox" id="0-3 1" name="years1" value="0">
+<label for="0-3 1"> | </label>
+<input class="c2 check" type="checkbox" id="0-3 2" name="years2" value="0">
+<label for="0-3 2"></label>
+<br><p>
+(0)
+</p>
+</td>
+<td style=text-align:center>
+  <p>
+  <strong>3-5 Years</strong><br>
+  <br>
+  </p>
+  <input class="c1 check" type="checkbox" id="3-5 1" name="years1" value="4">
+<label for="3-5 1"> | </label>
+<input class="c2 check" type="checkbox" id="3-5 2" name="years2" value="4">
+<label for="3-5 2"></label>
+<br><p>
+(4)
+</p>
+</td>
+<td style=text-align:center>
+  <p>
+  <strong>6-10 Years</strong><br>
+  <br>
+  </p>
+  <input class="c1 check" type="checkbox" id="6-10 1" name="years1" value="8">
+<label for="6-10 1"> | </label>
+<input class="c2 check" type="checkbox" id="6-10 2" name="years2" value="8">
+<label for="6-10 2"></label>
+<br><p>
+(8)
+</p>
+</td>
+<td style=text-align:center>
+  <p>
+  <strong>11-15 Years</strong><br>
+  <br>
+  </p>
+  <input class="c1 check" type="checkbox" id="11-15 1" name="years1" value="12">
+<label for="11-15 1"> | </label>
+<input class="c2 check" type="checkbox" id="11-15 2" name="years2" value="12">
+<label for="11-15 2"></label>
+<br><p>
+(12)
+</p>
+</td>
+<td style=text-align:center>
+  <p>
+  <strong>15+ Years</strong><br>
+  <br>
+  </p>
+  <input class="c1 check" type="checkbox" id="15+ 1" name="years1" value="8">
+<label for="15+ 1"> | </label>
+<input class="c2 check" type="checkbox" id="15+5 2" name="years2" value="8">
+<label for="15+ 2"></label>
+<br><p>
+(8)
+</p>
+</td>
+</table><br><br>
+
+<p>
+3. Assuming you are investing $100,000 and can choose from the five hypothetical portfolios shown in the table below. The dollar values for each portfolio represent two possible returns for one year. Assuming there is an equal chance of achieving either result (gain or loss), please indicate which portfolio represents the maximum risk/ retuen trade-off you would be willing to accept.
+</p><br><br>
+
+<table>
+<tr>
+  <td>
+    <p>
+    (Please select 1 of the following portfolio options)
+    </p>
+  </td>
+  <td>
+    <p>
+    Possible Gain
+    </p>
+  </td>
+  <td>
+    <p>
+    Possible Loss
+    </p>
+  </td>
+  <td>
+    <p>
+    Points Possible
+    </p>
+  </td>
+</tr>
+<tr>
+  <td>
+    <input class="c1 check" type="checkbox" id="portfolioA1" name="portfolio1" value="12">
+<label for="portfolioA1"> | </label>
+<input class="c2 check" type="checkbox" id="portfolioA2" name="portfolio2" value="12">
+<label for="portfolioA2"><strong>Portfolio A</strong></label>
+  </td>
+  <td>
+    <p>
+    $60,000
+    </p>
+  </td>
+  <td>
+    <p>
+    -$45,000
+    </p>
+  </td>
+  <td>
+    <p>
+    (12)
+    </p>
+  </td>
+</tr>
+<tr>
+  <td>
+    <input class="c1 check" type="checkbox" id="portfolioB1" name="portfolio1" value="9">
+<label for="portfolioB1"> | </label>
+<input class="c2 check" type="checkbox" id="portfolioB2" name="portfolio2" value="9">
+<label for="portfolioB2"><strong>Portfolio B</strong></label>
+  </td>
+  <td>
+    <p>
+    $50,000
+    </p>
+  </td>
+  <td>
+    <p>
+    -$35,000
+    </p>
+  </td>
+  <td>
+    <p>
+    (9)
+    </p>
+  </td>
+</tr>
+<tr>
+  <td>
+    <input class="c1 check" type="checkbox" id="portfolioC1" name="portfolio1" value="6">
+<label for="portfolioC1"> | </label>
+<input class="c2 check" type="checkbox" id="portfolioC2" name="portfolio2" value="6">
+<label for="portfolioC2"><strong>Portfolio C</strong></label>
+  </td>
+  <td>
+    <p>
+    $35,000
+    </p>
+  </td>
+  <td>
+    <p>
+    -$25,000
+    </p>
+  </td>
+  <td>
+    <p>
+    (6)
+    </p>
+  </td>
+</tr>
+<tr>
+  <td>
+    <input class="c1 check" type="checkbox" id="portfolioD1" name="portfolio1" value="3">
+<label for="portfolioD1"> | </label>
+<input class="c2 check" type="checkbox" id="portfolioD2" name="portfolio2" value="3">
+<label for="portfolioD2"><strong>Portfolio D</strong></label>
+  </td>
+  <td>
+    <p>
+    $25,000
+    </p>
+  </td>
+  <td>
+    <p>
+    -$15,000
+    </p>
+  </td>
+  <td>
+    <p>
+    (3)
+    </p>
+  </td>
+</tr>
+<tr>
+  <td>
+    <input class="c1 check" type="checkbox" id="portfolioE1" name="portfolio1" value="0">
+<label for="portfolioE1"> | </label>
+<input class="c2 check" type="checkbox" id="portfolioE2" name="portfolio2" value="0">
+<label for="portfolioE2"><strong>Portfolio E</strong></label>
+  </td>
+  <td>
+    <p>
+    $15,000
+    </p>
+  </td>
+  <td>
+    <p>
+    -$5,000
+    </p>
+  </td>
+  <td>
+    <p>
+    (0)
+    </p>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+    <p>
+    *The maximum gain or loss on an investment is impossible to predict. The ranges shown in the chart are hypothetical and are designed soley to gaufe an investor's tolerance for risk*
+    </p>
+  </td>
+</tr>
+</table><br><br>
+
+
+
+<p>
+4. Please indicate the level of risk with which you are most comfortable:
+</p><br><br>
+
+<table>
+<td>
+  <p style="text-align:left!important;">
+  <strong>LOW</strong>
+  </p><br>
+  <p>
+  <strong>0</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="risk0 1" name="risk1" value="0">
+<label for="risk0 1"> | </label>
+<input class="c2 check" type="checkbox" id="risk0 2" name="risk2" value="0">
+<label for="risk0 2"></label><br>
+<p>
+(0)
+</p>
+</td>
+<td>
+  <p style="text-align:left!important;">
+  <strong></strong>
+  </p><br>
+  <p>
+  <strong>1</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="risk1 1" name="risk1" value="4">
+<label for="risk1 1"> | </label>
+<input class="c2 check" type="checkbox" id="risk1 2" name="risk2" value="4">
+<label for="risk2 1"></label><br>
+<p>
+(4)
+</p>
+</td>
+<td>
+  <p style="text-align:right!important;">
+  <strong>Medium</strong>
+  </p><br>
+  <p>
+  <strong>2</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="risk2 1" name="risk1" value="8">
+<label for="risk2 1"> | </label>
+<input class="c2 check" type="checkbox" id="risk2 2" name="risk2" value="8">
+<label for="risk2 2"></label><br>
+<p>
+(8)
+</p>
+</td>
+<td>
+  <p style="text-align:right!important;">
+  <strong></strong>
+  </p><br>
+  <p>
+  <strong>3</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="risk3 1" name="risk1" value="12">
+<label  for="risk3 1"> | </label>
+<input class="c2 check" type="checkbox" id="risk3 2" name="risk2" value="12">
+<label for="risk3 2"></label><br>
+<p>
+(12)
+</p>
+</td>
+<td>
+  <p style="text-align:right!important;">
+  <strong></strong>
+  </p><br>
+  <p>
+  <strong>4</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="risk4 1" name="risk1" value="16">
+<label for="risk4 1"> | </label>
+<input class="c2 check" type="checkbox" id="risk4 2" name="risk2" value="16">
+<label for="risk4 2"></label><br>
+<p>
+(16)
+</p>
+</td>
+<td>
+  <p style="text-align:right!important;">
+  <strong>HIGH</strong>
+  </p><br>
+  <p>
+  <strong>5</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="risk5 1" name="risk1" value="16">
+<label for="risk5 1"> | </label>
+<input class="c2 check" type="checkbox" id="risk5 2" name="risk2" value="16">
+<label for="risk5 2"></label><br>
+<p>
+(16)
+</p>
+</td>
+</table><br><br>
+
+<p>
+5. How long are you prepared to wait for your account to return to its original value after a down market?
+</p><br><br>
+
+<table>
+<td>
+<p>
+  <strong>&lt;18 Months</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="wait1 1" name="wait1" value="0">
+<label for="wait1 1"> | </label>
+<input class="c2 check" type="checkbox" id="wait1 2" name="wait2" value="0">
+<label for="wait1 2"></label><br>
+<p>
+(0)
+</p>
+</td>
+<td>
+<p>
+  <strong>18 Months-2 Years</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="wait2 1" name="wait1" value="4">
+<label for="wait2 1"> | </label>
+<input class="c2 check" type="checkbox" id="wait2 2" name="wait2" value="4">
+<label for="wait2 2"></label><br>
+<p>
+(4)
+</p>
+</td>
+<td>
+<p>
+  <strong>2-3 Years</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="wait3 1" name="wait1" value="8">
+<label for="wait3 1"> | </label>
+<input class="c2 check" type="checkbox" id="wait3 2" name="wait2" value="8">
+<label for="wait3 2"></label><br>
+<p>
+(8)
+</p>
+</td>
+<td>
+<p>
+  <strong>3-5 Years</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="wait4 1" name="wait1" value="12">
+<label for="wait4 1"> | </label>
+<input class="c2 check" type="checkbox" id="wait4 2" name="wait2" value="12">
+<label for="wait4 2"></label><br>
+<p>
+(12)
+</p>
+</td>
+<td>
+<p>
+  <strong>5+ Years</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="wait5 1" name="wait1" value="16">
+<label for="wait5 1"> | </label>
+<input class="c2 check" type="checkbox" id="wait5 2" name="wait2" value="16">
+<label for="wait5 2"></label><br>
+<p>
+(16)
+</p>
+</td>
+</table><br><br>
+
+<p>
+6. My current income and future income (salary, pension, etc.) is:
+</p><br><br>
+
+<table>
+<td>
+<p>
+  <strong>Very Secure</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="secure1 1" name="secure1" value="12">
+<label for="secure1 1"> | </label>
+<input class="c2 check" type="checkbox" id="secure1 2" name="secure2" value="12">
+<label for="secure1 2"></label><br>
+<p>
+(12)
+</p>
+</td>
+<td>
+<p>
+  <strong>Mostly Secure</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="secure2 1" name="secure1" value="9">
+<label for="secure2 1"> | </label>
+<input class="c2 check" type="checkbox" id="secure2 2" name="secure2" value="9">
+<label for="secure2 2"></label><br>
+<p>
+(9)
+</p>
+</td>
+<td>
+<p>
+  <strong>Secure</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="secure3 1" name="secure1" value="6">
+<label for="secure3 1"> | </label>
+<input class="c2 check" type="checkbox" id="secure3 2" name="secure2" value="6">
+<label for="secure3 2"></label><br>
+<p>
+(6)
+</p>
+</td>
+<td>
+<p>
+  <strong>Somewhat Secure</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="secure4 1" name="secure1" value="3">
+<label for="secure4 1"> | </label>
+<input class="c2 check" type="checkbox" id="secure4 2" name="secure2" value="3">
+<label for="secure4 2"></label><br>
+<p>
+(3)
+</p>
+</td>
+<td>
+<p>
+  <strong>Not Secure</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="secure5 1" name="secure1" value="0">
+<label for="secure5 1"> | </label>
+<input class="c2 check" type="checkbox" id="secure5 2" name="secure2" value="0">
+<label for="secure5 2"></label><br>
+<p>
+(0)
+</p>
+</td>
+</table><br><br>
+
+<p>
+7. How able are you to handle financial emergencies with assets outside of your investment?
+</p><br><br>
+
+<table>
+<td>
+<p>
+  <strong>Very Able</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="able1 1" name="able1" value="12">
+<label for="able1 1"> | </label>
+<input class="c2 check" type="checkbox" id="able1 2" name="able2" value="12">
+<label for="able1 2"></label><br>
+<p>
+(12)
+</p>
+</td>
+<td>
+<p>
+  <strong>Mostly Able</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="able2 1" name="able1" value="9">
+<label for="able2 1"> | </label>
+<input class="c2 check" type="checkbox" id="able2 2" name="able2" value="9">
+<label for="able2 2"></label><br>
+<p>
+(9)
+</p>
+</td>
+<td>
+<p>
+  <strong>Able</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="able3 1" name="able1" value="6">
+<label for="able3 1"> | </label>
+<input class="c2 check" type="checkbox" id="able3 2" name="able2" value="6">
+<label for="able3 2"></label><br>
+<p>
+(6)
+</p>
+</td>
+<td>
+<p>
+  <strong>Somewhat Able</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="able4 1" name="able1" value="3">
+<label for="able4 1"> | </label>
+<input class="c2 check" type="checkbox" id="able4 2" name="able2" value="3">
+<label for="able4 2"></label><br>
+<p>
+(3)
+</p>
+</td>
+<td>
+<p>
+  <strong>Not Able</strong>
+  </p><br>
+  <input class="c1 check" type="checkbox" id="able5 1" name="able1" value="0">
+<label for="able5 1"> | </label>
+<input class="c2 check" type="checkbox" id="able5 2" name="able2" value="0">
+<label for="able5 2"></label><br>
+<p>
+(0)
+</p>
+</td>
+</table><br><br>
+
+
+
+</form>
+<button onclick="calc()">
+Submit
+</button>
+
+<br><br><p>
+<strong>Your Risk Assessment:</strong> To determine your speific risk assessment, add together the point values associated with each of our responses. A total score of 100 represents the highest tolerance for risk.<br><br>
+1-17 Very Risk Adverse / 18-34 Conservative / 35-50 Moderate / 51-67 Balanced / 68-84 Growth / 85-100 Aggressive<br><br>
+</p>
+
+<p>
+<strong>Client 1: Score of </strong><p id="score1">___</p>
+</p><br>
+<p>
+<strong>Client 2: Score of </strong><p id="score2">___</p>
+</p><br>
+<p>
+<strong>Date: </strong><p id="date">_________</p>
+</p><br>
+
+
+</body>
+
+</html>
