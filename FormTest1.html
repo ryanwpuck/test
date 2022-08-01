@@ -49,16 +49,28 @@ p {
 
 .lBlock{
   float: left;
+  left: 0;
+  position: static;
 }
 
 .rBlock{
   float: right;
+  right: 0;
+  position: static;
 }
 
 table, td {
+   text-align:center;
    border: 1px solid black;
    padding: 5px;
+   table-layout: fixed;
+   width: 100%;
 }
+
+h1 {
+  text-align:center;
+}
+
 
 </style>
 </head>
