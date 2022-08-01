@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$('input[type="checkbox"]').on('change', function() {
+    $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+});
+</script>
+
+<style>
+.full {
+  width: 90%;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+ 
+  margin-left: 5vw;
+}
+
+.third{
+  width: 60%;
+}
+
+.half {
+  width: 80%;
+}
+
+.half2 {
+  width: 44%;
+}
+
+p {
+  display: inline;
+}
+
+tr {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.shirt {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+}
+
+li {
+  display: inline;
+  
+}
+</style>
+</head>
+
+<body>
+
+<h1 style="text-align:center;">Confidential Questionnaire</h1>
+
+<form action = "">
+<table>
+<tr>
+  <td colspan="4">
+    <label for="date">Date:</label><br>
+<input class="full" type="text" id="date" name="date">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="name">Full Name:</label><br>
+<input class="full" type="text" id="name" name="name">
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <label for="age">Age:</label><br>
+<input class="third" type="text" id="age" name="age">
+  </td>
+  <td>
+    <label for="dobMM">MM:</label><br>
+<input class="third" type="text" id="dobMM" name="dobMM">
+  </td>
+  <td>
+    <label for="dobDD">DD:</label><br>
+<input class="third" type="text" id="dobDD" name="dobDD">
+  </td>
+  <td>
+    <label for="dobYY">YY:</label><br>
+<input class="third" type="text" id="dobYY" name="dobYY">
+  </td>   
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="email">Email::</label><br>
+<input class="full" type="text" id="email" name="email">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="addresss">Address:</label><br>
+<input class="full" type="text" id="address" name="address">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="2">
+    <label  for="cell">Cell:</label><br>
+<input  class="half" type="text" id="cell" name="cell">
+  </td>
+  <td colspan="2">
+    <label for="home">Home:</label><br>
+<input class="half" type="text" id="home" name="home">
+  </td>  
+</tr>
+
+<tr>
+  <td colspan="2">
+  <p>
+  Retired:
+  </p>
+    <input type="checkbox" id="retiredY" name="retiredY" value="0">
+<label for="retiredY">Y</label>
+<input type="checkbox" id="retiredN" name="retiredN" value="0">
+<label for="retiredN">N</label>
+  </td>
+  <td colspan="2">
+    <label for="employer">Employer/Previous:</label><br>
+<input class="half" type="text" id="employer" name="employer">
+  </td>  
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="addresss">Spouse:</label><br>
+<input class="full" type="text" id="spouse" name="spouse">
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <label for="Sage">Age:</label><br>
+<input class="third" type="text" id="Sage" name="Sage">
+  </td>
+  <td>
+    <label for="SdobMM">MM:</label><br>
+<input class="third" type="text" id="SdobMM" name="SdobMM">
+  </td>
+  <td>
+    <label for="SdobDD">DD:</label><br>
+<input class="third" type="text" id="SdobDD" name="SdobDD">
+  </td>
+  <td>
+    <label for="SdobYY">YY:</label><br>
+<input class="third" type="text" id="SdobYY" name="SdobYY">
+  </td>   
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="Saddresss">Address (if different):</label><br>
+<input class="full" type="text" id="Saddress" name="Saddress">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="Semail">Email:</label><br>
+<input class="full" type="text" id="Semail" name="Semail">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="2">
+    <label  for="Scell">Cell:</label><br>
+<input  class="half" type="text" id="Scell" name="Scell">
+  </td>
+  <td colspan="2">
+    <label for="Shome">Home:</label><br>
+<input class="half" type="text" id="Shome" name="Shome">
+  </td>  
+</tr>
+
+<tr>
+  <td colspan="2">
+  <p>
+  Retired:
+  </p>
+    <input type="checkbox" id="SretiredY" name="SretiredY" value="0">
+<label for="SretiredY">Y</label>
+<input type="checkbox" id="SretiredN" name="SretiredN" value="0">
+<label for="SretiredN">N</label>
+  </td>
+  <td colspan="2">
+    <label for="Semployer">Employer/Previous:</label><br>
+<input class="half" type="text" id="Semployer" name="Semployer">
+  </td>  
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="children">Children:</label><br>
+<input class="full" type="text" id="children" name="children">
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <p>
+    Anniversary Date:
+    </p>
+    </td>
+  <td>
+    <label for="annMM">MM:</label><br>
+<input class="third" type="text" id="annMM" name="annMM">
+  </td>
+  <td>
+    <label for="annDD">DD:</label><br>
+<input class="third" type="text" id="annDD" name="annDD">
+  </td>
+  <td>
+    <label for="annYY">YY:</label><br>
+<input class="third" type="text" id="annYY" name="annYY">
+  </td>   
+</tr>
+</table>
+
+<br>
+<hr>
+<br>
+
+<table>
+<tr style="text-align:justify;">
+  <td colspan="4" class="shirt">
+  <p>
+  T-Shirt Size:
+  </p>
+    <input type="checkbox" id="xs" name="shirt" value="0">
+<label for="xs">XS</label>
+<input type="checkbox" id="s" name="shirt" value="0">
+<label for="s">S</label>
+<input type="checkbox" id="m" name="shirt" value="0">
+<label for="m">M</label>
+<input type="checkbox" id="l" name="shirt" value="0">
+<label for="l">L</label>
+<input type="checkbox" id="xl" name="shirt" value="0">
+<label for="xl">XL</label>
+<input type="checkbox" id="xxl" name="shirt" value="0">
+<label for="xxl">XXL</label>
+<input type="checkbox" id="xxxl" name="shirt" value="0">
+<label for="xxxl">XXXL</label>
+<input type="checkbox" id="xxxxl" name="shirt" value="0">
+<label for="xxxxl">XXXXL</label>
+  </td>
+</tr>
+
+<tr style="text-align:justify;">
+  <td colspan="4" class="shirt">
+  <p>
+  T-Shirt Size:
+  </p>
+    <input type="checkbox" id="Sxs" name="Sshirt" value="0">
+<label for="Sxs">XS</label>
+<input type="checkbox" id="Ss" name="Sshirt" value="0">
+<label for="Ss">S</label>
+<input type="checkbox" id="Sm" name="Sshirt" value="0">
+<label for="Sm">M</label>
+<input type="checkbox" id="Sl" name="Sshirt" value="0">
+<label for="Sl">L</label>
+<input type="checkbox" id="Sxl" name="Sshirt" value="0">
+<label for="SXl">XL</label>
+<input type="checkbox" id="Sxxl" name="Sshirt" value="0">
+<label for="Sxxl">XXL</label>
+<input type="checkbox" id="Sxxxl" name="Sshirt" value="0">
+<label for="Sxxxl">XXXL</label>
+<input type="checkbox" id="Sxxxxl" name="Sshirt" value="0">
+<label for="Sxxxxl">XXXXL</label>
+  </td>
+</tr>
+</table>
+
+<table>
+<tr>
+  <td colspan="4">
+    <label for="color">Favorite Colors:</label><br>
+<input class="half2" type="text" id="color" name="color">
+<input class="half2" type="text" id="Scolor" name="Scolor">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="hob">Hobbies:</label><br>
+<input class="half2" type="text" id="hob" name="hob">
+<input class="half2" type="text" id="Shob" name="Shob">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="sport">Favorite Sports:</label><br>
+<input class="half2" type="text" id="sport" name="sport">
+<input class="half2" type="text" id="Ssport" name="Ssport">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="bev1">Beverage Preference:</label><br>
+<input class="half2" type="text" id="bev1" name="bev1">
+<input class="half2" type="text" id="Sbev1" name="Sbev1">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="bev2">Adult Beverage Preference:</label><br>
+<input class="half2" type="text" id="bev2" name="bev2">
+<input class="half2" type="text" id="Sbev2" name="Sbev2">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="res">Favorite Restaurant:</label><br>
+<input class="half2" type="text" id="res" name="res">
+<input class="half2" type="text" id="Sres" name="Sres">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="vac">Favorite Vacation Destination(s):</label><br>
+<input class="half2" type="text" id="vac" name="vac">
+<input class="half2" type="text" id="Svac" name="Svac">
+  </td>
+</tr>
+</table>
+
+<br>
+<hr>
+<br>
+
+<table>
+<tr>
+<td>
+  
+</td>
+  <td>
+    <ul style="list-style:none;display:flex;justify-content: space-between;width:80%;padding-left:5px;">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td>
+    <label for="risk">What would you consider your risk tolerance to be?</label></td>
+    <td>
+    <input style="width: 80%;" type="range" id="risk" name="risk" min="1" max="10" step="1">
+  </td>
+</tr>
+
+<tr>
+<td>
+  
+</td>
+  <td>
+    <ul style="list-style:none;display:flex;justify-content: space-between;width:80%;padding-left:5px;">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td>
+    <label for="max">How important is maximum growth of your assets?</label></td>
+    <td>
+    <input style="width: 80%;" type="range" id="max" name="max" min="1" max="10" step="1">
+  </td>
+</tr>
+</table>
+<br>
+
+<table>
+<tr>
+  <td colspan="4">
+    <label for="adv">If you could change anything about your financial advisor, what would that be?:</label><br>
+<input class="full" type="text" id="adv" name="adv">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="port">If you could change anything about your portfolio management, what would that be?:</label><br>
+<input class="full" type="text" id="port" name="port">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+  <p>
+  Would you consider the management style of your portfolio to be:
+  </p>
+    <input type="checkbox" id="active" name="active" value="0">
+<label for="SretiredY">Active</label>
+<input type="checkbox" id="passive" name="active" value="0">
+<label for="passive">Passive</label>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <label for="goal">is there anything that you would like us to know so we can better understand your long term goals?</label><br>
+<input class="full" type="text" id="goal" name="goal">
+  </td>
+</tr>
+</table>
+
+<br>
+<input style="display:block;margin: auto;" type="submit">
+
+
+</form>
+</body>
+</html>
